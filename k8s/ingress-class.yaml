@@ -1,0 +1,6 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: platform-ingress-class
+spec:
+  controller: k8s.io/platform-ingress-nginx
