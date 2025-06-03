@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mr-public-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: mr-public-web
+  template:
+    metadata:
+      labels:
+        run: mr-public-web
+    spec:
+      containers:
+      - name: mr-public-web
+        image: kenlai212/mr-public-web:jenkins-mr-public-web-45
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
